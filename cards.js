@@ -27,8 +27,8 @@ function buildCard(){
 
 
 createBtn.addEventListener("click", function(){
-    let input = document.getElementById("input");
-    input.value = " "
+    let input = document.getElementById("input").value;
+    input = " "
     if (input){
         return buildCard()
     }
