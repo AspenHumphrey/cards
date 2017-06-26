@@ -26,16 +26,14 @@ function buildCard(){
 };
 
 
-createBtn.addEventListener("click", function(){
-    let input = document.getElementById("input");
-    input.value = " "
-    if (input){
-        return buildCard()
-    }
+createBtn.addEventListener("click", function(button){
+    let input = document.getElementById("input").value;
+       buildCard()
+
 });
 
 
-function clearTextBox(event, inputText) {
+function clearTextBox(event, button, inputText) {
   if (inputText != "") {
     userInput.value = "";
   }
@@ -43,8 +41,9 @@ function clearTextBox(event, inputText) {
 
 userInput.addEventListener("keypress", function(event) {
     // invokes function to take any keypress to submit the user input to the DOM.
-    if (event.key === "Enter") {
-        let inputText = userInput.value;
-        clearTextBox(inputText);
-    }
+        if (event.key === "Enter") {
+            let inputText = userInput.value;
+            buildCard()
+            clearTextBox(inputText);
+        }
 }); 
